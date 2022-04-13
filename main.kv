@@ -1,0 +1,57 @@
+#:kivy 2.0
+
+
+
+# globals
+#:set primary_background_color [.9, .9, .9, 1]
+
+
+
+
+
+<Row@BoxLayout>:
+    orientation: 'horizontal'
+
+
+
+<Column@BoxLayout>:
+    orientation: 'vertical'
+
+
+
+<Icon@Image>:
+    size_hint: None,None
+    width: self.parent.width
+    height: self.parent.height
+    y: self.parent.y
+    x: self.parent.x
+
+
+<TextLabel@Label>:
+    font_color: [ 1,  1,  1, 1]
+
+
+
+
+
+
+Manager:
+    id: manager
+    back_color: [.9, .9, .9, 1]
+    font_color: [ 0,  0,  0, 1]
+
+    canvas:
+        Color:
+            rgba: self.back_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    ImageScreen:
+        back_color: root.back_color
+        font_color: root.font_color
+
+    UserProfile:
+
+
+    UserSettings:

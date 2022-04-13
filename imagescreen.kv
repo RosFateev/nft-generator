@@ -1,0 +1,24 @@
+<ImageScreen@Screen+ColorScheme>:
+    name: 'image_screen'
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        Image:
+            source: 'resources/image/bank/body/pig-0.png'
+
+
+        BoxLayout:
+            orientation: 'horizontal'
+
+            PushButton:
+                text: 'back'
+
+            TextLabel:
+                text: '<- Select ->' 
+
+            PushButton:
+                text: 'front'
+                on_press:
+                    app.root.transition.direction = 'left'
+                    app.root.current = 'button_screen'

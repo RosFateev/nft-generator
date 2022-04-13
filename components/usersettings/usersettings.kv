@@ -1,0 +1,48 @@
+<UserSettings@Screen>:
+    name: 'settings'
+
+    Column:
+        padding: 10
+        spacing: 10
+
+        Row:
+            size_hint: 1, 0.07
+            padding: 5
+            spacing: 5
+
+            Button:
+                size_hint: 0.15, 1
+                on_press: 
+                    app.root.transition.direction = 'right'
+                    app.root.current = 'profile'
+
+                Icon:
+                    source: 'resources/icons/person-fill.png'
+
+            Label:
+                size_hint: 0.7, 1
+                text: 'Settings'
+
+            Button:
+                size_hint: 0.15, 1
+                on_press: 
+                    app.root.transition.direction = 'down'
+                    app.root.current = 'image'
+
+                Icon:
+                    source: 'resources/icons/arrow-up-fill.png'
+
+        Column:
+            size_hint: 1, 0.93
+            padding: 5
+            spacing: 5
+
+            Button:
+                text: 'color change'
+                on_press:
+                    app.root.back_color = [.9, .9, .9, 1] if app.root.back_color == [.1, .1, .1, 1] else [.1, .1, .1, 1]
+                    app.root.font_color = [ 0,  0,  0, 1] if app.root.font_color == [ 1,  1,  1, 1] else [ 0,  0,  0, 1]
+
+            Label:
+                size_hint: 1, 0.15
+                text: 'Setting 2'

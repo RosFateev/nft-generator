@@ -1,0 +1,56 @@
+<CompositeImage@Icon>:
+
+
+
+<ImageViewer@Carousel>:
+    direction: 'right'
+    loop: False
+
+
+
+<ImageScreen>:
+    name: 'image'
+    back_color: [.9, .9, .9, 1]
+    font_color: root.font_color
+    
+    Column:
+        padding: 10
+        spacing: 10
+        
+        ImageViewer:
+            size_hint: 1, 0.9
+            on_touch_up:
+                frame.refresh()
+
+            ImageFrame:
+                id: frame
+
+        Row:
+            size_hint: 1, 0.1
+            padding: 5
+            spacing: 5
+            
+            Button:
+                size_hint: 0.15, 1
+                on_press: 
+                    app.root.transition.direction = 'up'
+                    app.root.current = 'profile'
+                    print('button is pressed')
+                Icon:
+                    source: 'resources/icons/person-fill.png'
+            
+            Label:
+                size_hint: 0.15, 1
+                # color: root.font_color
+                text: '<- Choose ->'
+            
+            Button:
+                size_hint: 0.15, 1
+                background_color: root.back_color
+
+                on_press: 
+                    app.root.transition.direction = 'up'
+                    app.root.current = 'settings'
+                
+                Icon:
+                    source: 'resources/icons/gear-fill.png'

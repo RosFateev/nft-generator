@@ -1,0 +1,31 @@
+<ButtonScreen@Screen+ColorScheme>:
+    name: 'button_screen'
+
+    BoxLayout:
+        orientation: 'vertical'
+        
+        TextLabel:
+            text: 'First row of buttons'
+
+        BoxLayout:
+            orientation: 'horizontal'
+
+            PushButton:
+                text: 'back'
+                on_press:
+                    app.root.transition.direction = 'right'
+                    app.root.current = 'image_screen'
+
+            PushButton:
+                text: 'front'
+
+        TextLabel:
+            text: 'Second row of buttons'
+
+        BoxLayout:
+            orientation: 'horizontal'
+
+            PushButton:
+                text: 'color change'
+                on_press:
+                    

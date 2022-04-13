@@ -1,0 +1,51 @@
+<Gallery>:
+    do_scroll_x: False
+    do_scroll_y: True
+
+
+
+<UserProfile@Screen>:
+    name: 'profile'
+
+    Column:
+        padding: 10
+        spacing: 10
+
+        Row:
+            size_hint: 1, 0.07
+            padding: 5
+            spacing: 5
+
+            Button:
+                size_hint: 0.15, 1
+                on_press: 
+                    app.root.transition.direction = 'down'
+                    app.root.current = 'image'
+
+                Icon:
+                    source: 'resources/icons/arrow-up-fill.png'
+
+            Label:
+                size_hint: 0.7, 1
+                text: 'Profile'
+
+            Button:
+                size_hint: 0.15, 1
+                on_press: 
+                    app.root.transition.direction = 'left'
+                    app.root.current = 'settings'
+
+                Icon:
+                    source: 'resources/icons/gear-fill.png'
+
+        Column:
+            size_hint: 1, 0.93
+            padding: 5
+            spacing: 5
+
+            Label:
+                size_hint: 1, 0.07
+                text: 'Saved'
+
+            Gallery:
+                size_hint: 1, 0.93
